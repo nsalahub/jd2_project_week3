@@ -56,8 +56,6 @@ public class ItemRepositoryImpl implements ItemRepository {
 
     @Override
     public int update(Connection connection, Long id, String status) {
-        logger.info(id.toString() + "репозиторий");
-        logger.info(status + "статус");
         String query = "UPDATE Item SET status=? WHERE id=?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setString(1, status);

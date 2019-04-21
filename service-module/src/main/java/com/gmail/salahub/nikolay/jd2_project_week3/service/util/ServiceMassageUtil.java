@@ -5,5 +5,6 @@ public class ServiceMassageUtil {
     }
 
     public static final String INSERT_ITEM_SERVICE_ERROR_MASSAGE = "Insert item service failed";
-    public static final String SELECT_ITEM_SERVICE_ERROR_MASSAGE ="Selected item service failed";
+    public static final String SELECT_ITEM_SERVICE_ERROR_MASSAGE = "Selected item service failed";
+    public static final String ITEM_AUDIT_ASPECT_ERROR_EXCEPTION = "Audit Item failed";
 }

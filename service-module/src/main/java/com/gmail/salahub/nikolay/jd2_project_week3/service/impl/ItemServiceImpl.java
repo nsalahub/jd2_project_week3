@@ -54,10 +54,6 @@ public class ItemServiceImpl implements ItemService {
                 connection.setAutoCommit(false);
                 Item item = itemConverter.fromDTO(itemDTO);
                 Item itemWithId = itemRepository.add(connection, item);
-//                AuditItem auditItem = new AuditItem();
-//                auditItem.setItemId(itemWithId.getId());
-//                auditItem.setActionItem(ActionItem.CREATED);
-//                AuditItem auditItemWithId = auditItemRepository.save(connection, auditItem);
                 connection.commit();
                 return itemConverter.toDTO(itemWithId);
             } catch (SQLException | InsertItemRepositoryException | InsertItemAuditRepositoryException e) {
@@ -100,10 +96,6 @@ public class ItemServiceImpl implements ItemService {
             try {
                 connection.setAutoCommit(false);
                 int returnedValueString = itemRepository.update(connection, id, status);
-//                AuditItem auditItem = new AuditItem();
-//                auditItem.setItemId(id);
-//                auditItem.setActionItem(ActionItem.UPDATE);
-//                AuditItem itemWithId = auditItemRepository.save(connection, auditItem);
                 connection.commit();
                 return returnedValueString;
             } catch (UpdateItemRepositoryException | SQLException e) {
